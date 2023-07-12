@@ -7,6 +7,7 @@ import { CurrencyService } from '../currency.service';
   styleUrls: ['./currency-converter.component.css'],
 })
 export class CurrencyConverterComponent implements OnInit {
+  //define variables for containing results and writing values
   inputAmount: number | null = null;
   inputCurrency: string = 'USD';
   outputAmount: number | null = null;
@@ -16,6 +17,7 @@ export class CurrencyConverterComponent implements OnInit {
 
   constructor(private currencyService: CurrencyService) {}
 
+  //method for getting values from input
   ngOnInit() {
     this.currencyService.getCurrencyRates().subscribe((data: any) => {
       if (data && data.rates) {

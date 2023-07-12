@@ -8,16 +8,18 @@ import { CurrencyConverterComponent } from './currency-converter/currency-conver
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
+  //define variables for containing results
   usdRate: number | undefined;
   eurRate: number | undefined;
 
   constructor(private currencyService: CurrencyService) {}
 
   ngOnInit() {
+    //calculate current
     this.currencyService.getCurrencyRates().subscribe((data: any) => {
       const uahRate = data.rates.UAH;
-      this.usdRate = uahRate; // 1 USD is equivalent to UAH
-      this.eurRate = uahRate / data.rates.EUR; // Calculate how much UAH is equivalent to 1 EUR
+      this.usdRate = uahRate;
+      this.eurRate = uahRate / data.rates.EUR;
     });
   }
 }
