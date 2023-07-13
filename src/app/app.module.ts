@@ -8,9 +8,7 @@ import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, CurrencyConverterComponent],
-  //Import necessary modules
   imports: [BrowserModule, HttpClientModule, FormsModule],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

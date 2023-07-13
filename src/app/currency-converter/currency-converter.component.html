@@ -1,22 +1,22 @@
-<section class="flex flex-col self-center items-center w-[600px] p-2 bg-blue-200 rounded">
+<article class="flex flex-col self-center items-center w-[600px] p-2 bg-blue-200 rounded">
   <h1 class="text-4xl mb-10">Currency Converter</h1>
   <section class="flex justify-between items-center w-full">
-    <article>
+    <section>
       <input id="inputAmount" type="number" [(ngModel)]="inputAmount" (ngModelChange)="convertFromInput()" class="w-36 bg-blue-400 mx-1 rounded px-1" min="0" />
       <select [(ngModel)]="inputCurrency" (ngModelChange)="convertFromInput()" class="bg-transparent font-bold">
         <option value="USD">USD</option>
         <option value="EUR">EUR</option>
         <option value="UAH">UAH</option>
       </select>
-    </article>
+    </section>
     <span class="font-bold text-2xl">=</span>
-    <article>
+    <section>
       <select [(ngModel)]="outputCurrency" (ngModelChange)="convertFromOutput()" class="bg-transparent font-bold">
         <option value="USD">USD</option>
         <option value="EUR">EUR</option>
         <option value="UAH">UAH</option>
       </select>
       <input id="outputAmount" type="number" [(ngModel)]="outputAmount" (ngModelChange)="convertFromOutput()" class="w-36 bg-blue-400 mx-1 rounded px-1" min="0" />
-    </article>
+    </section>
   </section>
-</section>
+</article>

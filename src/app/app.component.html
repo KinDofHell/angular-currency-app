@@ -1,12 +1,10 @@
-<body>
-  <header class="w-full flex items-center justify-around p-8 bg-amber-50">
-    <h1 class="text-6xl font-bold">CurrencyHelper</h1>
-    <section class="flex items-center justify-around rounded bg-blue-400 text-xl py-2">
-      <p class="mx-4">1 USD | {{ usdRate | number:'1.4-4' }} UAH</p>
-      <p class="mx-4">1 EUR | {{ eurRate | number:'1.4-4' }} UAH</p>
-    </section>
-  </header>
-  <main class="w-full flex items-center justify-center my-10">
-    <app-currency-converter></app-currency-converter>
-  </main>
-</body>
+<header class="w-full flex items-center justify-around p-8 bg-amber-50">
+  <h1 class="text-6xl font-bold">CurrencyHelper</h1>
+  <section class="flex items-center justify-around rounded bg-blue-400 text-xl py-2">
+    <p class="mx-4">1 USD | {{ usdRate | number:'1.4-4' }} UAH</p>
+    <p class="mx-4">1 EUR | {{ eurRate | number:'1.4-4' }} UAH</p>
+  </section>
+</header>
+<main class="w-full flex items-center justify-center my-10">
+  <app-currency-converter></app-currency-converter>
+</main>

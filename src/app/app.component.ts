@@ -1,25 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { CurrencyService } from './currency.service';
-import { CurrencyConverterComponent } from './currency-converter/currency-converter.component';
+import { CurrencyService, CurrencyResponse } from './currency.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  //define variables for containing results
   usdRate: number | undefined;
   eurRate: number | undefined;
 
   constructor(private currencyService: CurrencyService) {}
 
   ngOnInit() {
-    //calculate current
-    this.currencyService.getCurrencyRates().subscribe((data: any) => {
-      const uahRate = data.rates.UAH;
-      this.usdRate = uahRate;
-      this.eurRate = uahRate / data.rates.EUR;
-    });
+    // Fetch currency rates on component initialization
+    this.currencyService
+      .getCurrencyRates()
+      .subscribe((data: CurrencyResponse) => {
+        // Extract UAH rate from the response
+        const uahRate = data.rates['UAH'];
+        // Calculate USD rate based on UAH rate
+        this.usdRate = uahRate;
+        // Calculate EUR rate based on UAH rate and EUR rate
+        this.eurRate = uahRate / data.rates['EUR'];
+      });
   }
 }
